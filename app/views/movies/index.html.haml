@@ -3,17 +3,25 @@
 %table#movies
     %thead
         %tr
+            %th No.
             %th Movie Title
             %th Rating
             %th Release Date
             %th More Info
+            %th Edit
+            %th Destroy
         %tbody
-            -@movies.each do |movie|
-                %tr
+            -@movies.each_with_index do |movie, index|
+                %tr 
+                    %td= index + 1
                     %td= movie.title
                     %td= movie.rating
                     %td= movie.release_date
                     %td= link_to "More about #{movie.title}", movie_path(movie)
+                    %td= link_to "Edit", edit_movie_path(movie)
+                    %td= link_to "Destroy", movie_path(movie), :method => :delete
+
+= link_to 'Add new movie', new_movie_path
                     
             
             

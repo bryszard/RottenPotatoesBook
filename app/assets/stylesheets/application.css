@@ -16,6 +16,7 @@ a {
   text-decoration: underline;
   font-weight: bold;
 }
+
 h1 {
   color: maroon;
   font-size: 150%;
@@ -23,6 +24,15 @@ h1 {
   display: block;
   width: 100%;
   border-bottom: 1px solid DarkSlateGrey;
+}
+h1#banner, h1#banner a {
+  font: normal bold 150% Georgia, serif;
+  text-decoration: none;
+  color: #e60000;
+  padding: 10px 10px;
+  background: gold;
+  border: none;
+  margin: 0 0 1em 0;
 }
 h1.title {
   margin: 0 0 1em;
@@ -48,10 +58,15 @@ table#movies th, table#movies td {
   padding: 4px;
   text-align: left;
 }
-#notice, #warning {
+tbody tr:hover {
+  background: gold;
+}
+div#notice, #warning {
   background: rosybrown;
-  margin: 1em 0;
-  padding: 4px;
+  margin: 1em auto;
+  padding: 4px 8px;
+  text-align: center;
+  color: #7C0101;
 }
 form label {
   display: block;
