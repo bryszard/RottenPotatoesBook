@@ -8,11 +8,17 @@ class SessionsController < ApplicationController
         Moviegoer.create_with_omniauth(auth)
         session[:user_id] = user.id
         redirect_to movies_path
+        
     end
     
     def destroy
         session.delete(:user_id)
         flash[:notice] = "Logged out successfully."
+        redirect_to movies_path
+    end
+    
+    def failure
+        flash[:notice] = "Couldn't login with Twitter. Please try again or choose another login method."
         redirect_to movies_path
     end
 

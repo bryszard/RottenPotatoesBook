@@ -1,11 +1,16 @@
 Myrottenpotatoes::Application.routes.draw do
+  resources :movies do
+    resources :reviews
+  end
   
-  get 'auth/:provider/callback' => 'sessions#create'
-  post 'logout' => 'sessions#destroy'
-  get 'auth/failure' => 'sessions#failure'
-  
-  resources :movies
   root :to => redirect('/movies')
+  
+  get '/auth/:provider/callback' => 'sessions#create'
+  get '/auth/failure' => 'sessions#failure'
+  get '/logout' => 'sessions#destroy' 
+  
+end
+
 
   
 
@@ -66,4 +71,4 @@ Myrottenpotatoes::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end
+
