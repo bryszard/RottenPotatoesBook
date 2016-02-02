@@ -30,17 +30,13 @@ class MoviesController < ApplicationController
     end
     
     def new
-        @movie = Movie.new
+        # render a form - 'new' template
     end
     
     def create
-        @movie = Movie.new(params[:movie])
-        if @movie.save
-            flash[:notice] = "#{@movie.title} has been successfully created."
-            redirect_to movie_path(@movie)
-        else
-            render 'new' # 'new' template can access @movie field values (as in edit)
-        end
+        @movie = Movie.create!(params[:movie])
+        flash[:notice] = "#{@movie.title} has been successfully created."
+        redirect_to movie_path(@movie)
     end
     
     def edit
@@ -49,14 +45,11 @@ class MoviesController < ApplicationController
     
     def update
         @movie = Movie.find params[:id]
-        if @movie.update_attributes(params[:movie])
-            flash[:notice] = "#{@movie.title} was successfully updated."
-            respond_to do |client_wants|
-                client_wants.html { redirect_to movie_path(@movie) }
-                client_wants.xml { render :xml => @movie.to_xml }
-            end
-        else
-            render 'edit'
+        @movie.update_attributes!(params[:movie])
+        flash[:notice] = "#{@movie.title} was successfully updated."
+        respond_to do |client_wants|
+            client_wants.html { redirect_to movie_path(@movie) }
+            client_wants.xml { render :xml => @movie.to_xml }
         end
     end
     

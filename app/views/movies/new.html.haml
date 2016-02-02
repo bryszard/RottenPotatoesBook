@@ -2,6 +2,19 @@
 
 = form_tag movies_path, :method => :post do
 
-    = render :partial => 'movie_form'
+    = label :movie, :title, 'Title'
+    = text_field :movie, :title
+    
+    = label :movie, :rating, 'Rating'
+    = select :movie, :rating, ['G', 'PG', 'PG-13', 'R', 'NC-17']
+    
+    = label :movie, :release_date, 'Released On'
+    = date_select :movie, :release_date, start_year: 1930, end_year: Date.today.year
+    
+    = label :movie, :description, 'Description'
+    = text_area :movie, :description
+    
+    - 2.times do 
+        %br
     = submit_tag 'Save Changes'
     = link_to 'Cancel', movies_path

@@ -35,9 +35,6 @@ gem 'jquery-rails'
 gem 'haml'
 gem 'protected_attributes'
 
-gem 'omniauth'
-gem 'omniauth-twitter'
-
 # Use unicorn as the web server
 # gem 'unicorn'
 

@@ -25,14 +25,22 @@ h1 {
   width: 100%;
   border-bottom: 1px solid DarkSlateGrey;
 }
-h1.title, h1.title a {
-  margin: 0 0 1em;
+h1#banner, h1#banner a {
+  font: normal bold 150% Georgia, serif;
   text-decoration: none;
+  color: #e60000;
+  padding: 10px 10px;
+  background: gold;
+  border: none;
+  margin: 0 0 1em 0;
+}
+h1.title {
+  margin: 0 0 1em;
   padding: 10px;
   background-color: orange;
-  color: #e60000;
+  color: white;
   border-bottom: 4px solid gold;
-  font-size: 180%;
+  font-size: 2em;
   font-style: normal;
 }
 table#movies {
@@ -54,18 +62,11 @@ tbody tr:hover {
   background: gold;
 }
 div#notice, #warning {
-  font-weight: bold;
+  background: rosybrown;
   margin: 1em auto;
   padding: 4px 8px;
-  text-align: left;
-  color: #e60000;
-  display: inline-block;
-  border: 1px solid #e60000;
-}
-div.field_with_errors input {
-  border: 1px solid #e60000;
-  background: wheat;
-  font-weight: bold;
+  text-align: center;
+  color: #7C0101;
 }
 form label {
   display: block;
