@@ -3,10 +3,6 @@ Myrottenpotatoes::Application.routes.draw do
     resources :reviews
   end
   
-<<<<<<< HEAD
-=======
-  resources :movies
->>>>>>> parent of 36c6008... 4th commit
   root :to => redirect('/movies')
   
   get '/auth/:provider/callback' => 'sessions#create'
@@ -16,7 +12,7 @@ Myrottenpotatoes::Application.routes.draw do
 end
 
 
-
+  
 
 #Rails.application.routes.draw do
   

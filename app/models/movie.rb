@@ -3,7 +3,6 @@ class Movie < ActiveRecord::Base
     has_many :moviegoers, through: :reviews
     
     attr_accessible :title, :rating, :description, :release_date
-<<<<<<< HEAD
     
     scope :with_good_reviews, lambda { |threshold| Movie.joins(:reviews).group(:movie_id).
         having(['AVG(reviews.potatoes) > ?', threshold.to_i]) }
@@ -37,6 +36,3 @@ class Movie < ActiveRecord::Base
     
 end
 
-=======
-end
->>>>>>> parent of 36c6008... 4th commit
