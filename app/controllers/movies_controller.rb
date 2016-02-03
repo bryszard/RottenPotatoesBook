@@ -24,10 +24,12 @@ class MoviesController < ApplicationController
         begin
         id = params[:id]
         @movie = Movie.find(id)
+        render(:partial => 'movie', :object => @movie) if request.xhr?
         rescue ActiveRecord::RecordNotFound
             redirect_to movies_path
         end
     end
+    
     
     def new
         @movie = Movie.new

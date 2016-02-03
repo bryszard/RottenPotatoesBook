@@ -38,6 +38,8 @@ gem 'protected_attributes'
 gem 'omniauth'
 gem 'omniauth-twitter'
 
+gem 'themoviedb'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
