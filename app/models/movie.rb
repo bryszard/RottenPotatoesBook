@@ -34,7 +34,19 @@ class Movie < ActiveRecord::Base
         self.title = self.title.split(/\s+/).map(&:downcase).map(&:capitalize).join(' ')
     end
     
+    class InvalidKeyError < StandardError
+    end
+    
     def self.find_in_tmdb(term)
+        begin
+            Tmdb::Movie.find(term)
+        rescue NoMethodError => tmdb_gem_exception
+            if Tmdb::Api.response['code'] == 401
+                raise Movie::InvalidKeyError, 'Invalid API key'
+            else
+                raise tmdb_gem_exception
+            end
+        end
     end
     
 end

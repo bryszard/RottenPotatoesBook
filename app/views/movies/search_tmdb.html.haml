@@ -1,0 +1,21 @@
+%h1 Results
+
+%table#movies
+    %thead
+        %tr
+            %th No.
+            %th Movie Title
+            %th Rating
+            %th Release Date
+            %th More Info
+
+        %tbody
+            -@movies.each_with_index do |movie, index|
+                %tr{:class => ('adult' unless movie.adult == false) } 
+                    %td= index + 1
+                    %td= movie.title
+                    %td= movie.popularity
+                    %td= movie.release_date
+                    %td= "More about #{movie.title}"
+
+= link_to 'Add new movie', new_movie_path

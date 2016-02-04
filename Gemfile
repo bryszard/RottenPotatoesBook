@@ -18,6 +18,7 @@ group :development, :test do
   gem 'minitest', '~> 5.8', '>= 5.8.4'
   gem 'rdoc', '~> 4.2', '>= 4.2.1'
   gem 'autotest', '~> 4.4', '>= 4.4.6'
+  gem "factory_girl_rails", "~> 4.0"
 end
 
 group :test do

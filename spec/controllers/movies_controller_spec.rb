@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe MoviesController, type: :controller do
     
-
     describe 'searching TMDb' do
         before :each do
             # old syntax - mock instead of double
