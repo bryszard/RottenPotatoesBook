@@ -13,10 +13,15 @@ group :development, :test do
   gem 'capybara'
   gem 'launchy'
   gem 'rspec-rails'
+  gem 'ZenTest', '~> 4.11'
+  gem 'hoe', '~> 3.14', '>= 3.14.2'
+  gem 'minitest', '~> 5.8', '>= 5.8.4'
+  gem 'rdoc', '~> 4.2', '>= 4.2.1'
+  gem 'autotest', '~> 4.4', '>= 4.4.6'
 end
 
 group :test do
-  gem 'cucumber-rails' 
+  gem 'cucumber-rails' , :require => false
   gem 'cucumber-rails-training-wheels'
 end
 group :production do

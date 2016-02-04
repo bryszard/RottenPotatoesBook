@@ -8,6 +8,7 @@ Myrottenpotatoes::Application.routes.draw do
   get '/auth/:provider/callback' => 'sessions#create'
   get '/auth/failure' => 'sessions#failure'
   get '/logout' => 'sessions#destroy' 
+  post '/movies/search_tmdb' # => 'movies#search_tmdb' Is this necessary?
   
 end
 
